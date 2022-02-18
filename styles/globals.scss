@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Yellowtail&display=swap');
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+* {
+	color: snow;
+	box-sizing: border-box;
+	font-family: 'Fira Code', monospace;
+	padding: 0;
+	margin: 0;
+}
+
+$r: 50px; // glow radius
+$o: 25px; // glow offset
+$d: 2s; // duration
+$chars: 15; // # of letters
+$bg: #111; // background color
+
+$c: cyan yellow tomato;
+
+.splash-title {
+	font-family: 'Yellowtail', cursive;
+}
+
+.splash-subtitle {
+	font-family: 'Fira Code', monospace;
+}
+
+.glow {
+	color: snow;
+	animation: glow $d ease-in-out both infinite;
+
+	@for $i from 1 through $chars {
+		&:nth-child(#{$i}) {
+			animation-delay: $i/$chars * -$d;
+		}
+	}
+}
+.icon {
+	border-radius: 50%;
+	transition: 0.1s ease-in-out;
+}
+.icon:hover {
+	animation: iconglow $d ease-in-out both infinite;
+}
+
+@mixin glow($c1, $c2, $c3) {
+	text-shadow: 0 0 $r/6 snow, 0 (-$o) $r $c3, (-$o) $o $r $c2, $o $o $r $c3;
+}
+
+@keyframes glow {
+	0%,
+	100% {
+		@include glow(nth($c, 1), nth($c, 2), nth($c, 3));
+	}
+	33% {
+		@include glow(nth($c, 2), nth($c, 3), nth($c, 1));
+	}
+	66% {
+		@include glow(nth($c, 3), nth($c, 1), nth($c, 2));
+	}
+}
+
+@mixin iconglow($c1, $c2, $c3) {
+	box-shadow: 0 0 $r/6 snow, 0 (-$o/6) $r/6 $c3, (-$o/6) $o/6 $r/6 $c2, $o/6 $o/6 $r/6 $c3;
+}
+
+@keyframes iconglow {
+	0%,
+	100% {
+		@include iconglow(nth($c, 1), nth($c, 2), nth($c, 3));
+	}
+	33% {
+		@include iconglow(nth($c, 2), nth($c, 3), nth($c, 1));
+	}
+	66% {
+		@include iconglow(nth($c, 3), nth($c, 1), nth($c, 2));
+	}
+}

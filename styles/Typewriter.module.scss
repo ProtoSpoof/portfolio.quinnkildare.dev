@@ -1,0 +1,14 @@
+.blink {
+	animation: blink 0.75s step-start infinite;
+	z-index: -1;
+}
+
+@keyframes blink {
+	from,
+	to {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
