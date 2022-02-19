@@ -1,7 +1,9 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Typewriter from '../components/Typewriter';
 import Particles from 'react-tsparticles';
 import { useState, useEffect } from 'react';
+import me from '../images/me.gif';
 
 export default function Home() {
 	const [user, setUser] = useState(null);
@@ -116,12 +118,12 @@ export default function Home() {
 						},
 						detectRetina: true,
 					}}
-				/>
+				></Particles>
 				<div className='grid grid-cols-1 gap-2 sm:gap-5 md:gap-8 content-center justify-center splash w-full h-screen bg-transparent relative top-0 left-0 z-10'>
 					<h1 className='glow splash-title justify-self-center text-4xl sm:text-6xl md:text-8xl'>
 						Quinlan Kildare
 					</h1>
-					<h2 className='glow splash-subtitle justify-self-center text-xl sm:text-3xl md:text-6xl text'>
+					<h2 className='glow splash-subtitle justify-self-center text-xl sm:text-3xl md:text-6xl'>
 						<Typewriter words={['Computer Scientist', 'Programmer', 'Engineer']} loop={true} />
 					</h2>
 					<div className='grid grid-cols-1 sm:grid-cols-3 content-center justify-center m-12'>
@@ -150,9 +152,37 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
-					<a href=''></a>
+					{/* <a
+						className='absolute flex content-center justify-center bottom-4 left-1/2 translate-x-1/2'
+						href='#bio'
+					>
+						<svg
+							className='h-8 w-auto fill-[snow] icon'
+							xmlns='http://www.w3.org/2000/svg'
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+						>
+							<path d='M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z' />
+						</svg>
+					</a> */}
 				</div>
-				{/* <div className='min-h-screen w-screen bg-[#00000050]'>THIS IS WHERE ILL PUT A LITTLE BIO IG</div> */}
+				<div id='bio' className='w-full bg-[#00000050] p-8'>
+					<h1 className='text-center text-4xl sm:text-6xl'>About</h1>
+					<div className='flex flex-col sm:flex-row content-center justify-center'>
+						<div className='flex content-center justify-center h-auto w-1/2 max-w-[250px] sm:h-1/2 sm:w-auto sm:max-h-[250px] sm:max-w-[250px] self-center pb-8 pt-8'>
+							<Image src={me} alt='Picture of the author' className='rounded-full ' />
+						</div>
+						<p className='self-center text-center'>
+							I'm a student majoring in Computer Science and the Vice-President of the Knight's Table
+							Tennis Club at the University of Central Florida. I started programming in highschool and
+							have stuck with it ever since. Since then I have learned and become proficient in many
+							programming languages like Python, Java, C and C++, but I prefer to program in C whenever
+							possible. I like to work on projects that are closer to the metal, but I have experience
+							doing fullstack developement with technologies like React, Nextjs and Nodejs.
+						</p>
+					</div>
+				</div>
 			</main>
 
 			<footer></footer>
