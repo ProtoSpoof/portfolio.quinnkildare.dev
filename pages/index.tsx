@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Typewriter from '../components/Typewriter';
+import SkillCard from '../components/SkillCard';
 import Particles from 'react-tsparticles';
 import { useState, useEffect } from 'react';
 import me from '../public/images/me.gif';
@@ -22,7 +23,7 @@ export default function Home() {
 	console.log(user);
 
 	return (
-		<div className='min-h-screen w-screen bg-neutral-900'>
+		<div className='min-h-screen w-screen bg-[#121212]'>
 			<main className='grid grid-cols-1 content-center justify-center min-h-screen w-full'>
 				<Particles
 					className='absolute h-screen w-full z-10'
@@ -141,11 +142,11 @@ export default function Home() {
 				</div>
 				<div id='bio' className='flex flex-col justify-center content-center w-full bg-[#00000050] p-4'>
 					<h1 className='text-center text-4xl sm:text-5xl p-4'>About</h1>
-					<div className='flex flex-col lg:flex-row self-center content-center justify-center p-4 max-w-[1000px]'>
+					<div className='flex flex-col lg:flex-row self-center content-center justify-center p-4 max-w-[1500px]'>
 						<div className='flex content-center justify-center h-fit w-1/2 max-w-[175px] m-4 mb-8 sm:h-[175px] sm:w-fit sm:mr-8 self-center glow-circle'>
 							<Image src={me} alt='Picture of the author' className='rounded-full ' />
 						</div>
-						<p className='self-center text-justify text-lg sm:text-2xl p-4 w-fit lg:text-justify '>
+						<p className='self-center text-justify text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
 							I'm a student majoring in Computer Science and the Vice-President of the Knight's Table
 							Tennis Club at the University of Central Florida. I started programming in highschool and
 							have stuck with it ever since. Since then I have learned and become proficient in many
@@ -153,6 +154,17 @@ export default function Home() {
 							possible. I like to work on projects that are closer to the metal, but I have experience
 							doing fullstack developement with technologies like React, Nextjs and Nodejs.
 						</p>
+					</div>
+				</div>
+				<div id='skills' className='flex flex-col justify-center content-center w-full p-4'>
+					<h1 className='text-center text-4xl sm:text-5xl p-4'>Skills</h1>
+					<p className='self-center text-center text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
+						Here are some of the skills I've learned since I started programming.
+					</p>
+					<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
+						{user.skills.map((e, ind) => {
+							return <SkillCard skill={e.name.toString()} />;
+						})}
 					</div>
 				</div>
 			</main>
