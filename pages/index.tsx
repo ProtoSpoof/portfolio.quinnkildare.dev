@@ -156,7 +156,7 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-				<div id='skills' className='flex flex-col justify-center content-center w-full p-4'>
+				<div id='skills' className='flex flex-col justify-center content-center w-full min-h-screen p-4'>
 					<h1 className='text-center text-4xl sm:text-5xl p-4'>Skills</h1>
 					<p className='self-center text-center text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
 						Here are some of the skills I've learned since I started programming.
