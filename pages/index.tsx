@@ -148,7 +148,7 @@ export default function Home() {
 						</div>
 						<p className='self-center text-justify text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
 							I'm a student majoring in Computer Science and the Vice-President of the Knight's Table
-							Tennis Club at the University of Central Florida. I started programming in highschool and
+							Tennis Club at the University of Central Florida. I started programming in high school and
 							have stuck with it ever since. Since then I have learned and become proficient in many
 							programming languages like Python, Java, C and C++, but I prefer to program in C whenever
 							possible. I like to work on projects that are closer to the metal, but I have experience
