@@ -1,6 +1,4 @@
 {
-	"short_name": "Portfolio",
-	"name": "Kildare Portfolio",
 	"icons": [
 		{
 			"src": "favicon.svg",
@@ -18,8 +16,11 @@
 			"sizes": "512x512"
 		}
 	],
-	"start_url": "/",
+	"name": "Kildare Portfolio Site",
+	"short_name": "Portfolio",
+	"theme_color": "#731616",
+	"background_color": "#121212",
 	"display": "standalone",
-	"theme_color": "#000000",
-	"background_color": "#ffffff"
+	"scope": "/",
+	"start_url": "/"
 }
