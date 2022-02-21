@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Typewriter from '../components/Typewriter';
 import Particles from 'react-tsparticles';
 import { useState, useEffect } from 'react';
-import me from '../images/me.gif';
+import me from '../public/images/me.gif';
 
 export default function Home() {
 	const [user, setUser] = useState(null);
