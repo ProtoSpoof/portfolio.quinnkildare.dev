@@ -163,7 +163,7 @@ export default function Home() {
 					</p>
 					<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
 						{user.skills.map((e, ind) => {
-							return <SkillCard skill={e.name.toString()} />;
+							return <SkillCard key={ind} skill={e.name.toString()} />;
 						})}
 					</div>
 				</div>
