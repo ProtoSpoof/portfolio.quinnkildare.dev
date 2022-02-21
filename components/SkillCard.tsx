@@ -19,8 +19,8 @@ function SkillCard(props: SkillCardProps) {
 					{SkillLogo ? <SkillLogo className={`${styles.logo}`} /> : props.skill}
 				</div>
 				<div className={`grid content-center justify-center text-center w-full h-full ${styles.backface}`}>
-					<h2 className='text-3xl'>{props.skill}</h2>
-					<h3 className=''>{props.level}</h3>
+					<h2 className='sm:text-xl lg:text-3xl'>{props.skill}</h2>
+					<h3 className='md:text-2xl'>{props.level}</h3>
 				</div>
 			</div>
 		</div>
