@@ -1,7 +1,9 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import Typewriter from '../components/Typewriter';
 import Particles from 'react-tsparticles';
 import { useState, useEffect } from 'react';
+import me from '../images/me.gif';
 
 export default function Home() {
 	const [user, setUser] = useState(null);
@@ -116,12 +118,12 @@ export default function Home() {
 						},
 						detectRetina: true,
 					}}
-				/>
+				></Particles>
 				<div className='grid grid-cols-1 gap-2 sm:gap-5 md:gap-8 content-center justify-center splash w-full h-screen bg-transparent relative top-0 left-0 z-10'>
 					<h1 className='glow splash-title justify-self-center text-4xl sm:text-6xl md:text-8xl'>
 						Quinlan Kildare
 					</h1>
-					<h2 className='glow splash-subtitle justify-self-center text-xl sm:text-3xl md:text-6xl text'>
+					<h2 className='glow splash-subtitle justify-self-center text-xl sm:text-3xl md:text-6xl'>
 						<Typewriter words={['Computer Scientist', 'Programmer', 'Engineer']} loop={true} />
 					</h2>
 					<div className='grid grid-cols-1 sm:grid-cols-3 content-center justify-center m-12'>
@@ -150,9 +152,23 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
-					<a href=''></a>
 				</div>
-				{/* <div className='min-h-screen w-screen bg-[#00000050]'>THIS IS WHERE ILL PUT A LITTLE BIO IG</div> */}
+				<div id='bio' className='flex flex-col justify-center content-center w-full bg-[#00000050] p-4'>
+					<h1 className='text-center text-4xl sm:text-5xl p-4'>About</h1>
+					<div className='flex flex-col lg:flex-row self-center content-center justify-center p-4 max-w-[1000px]'>
+						<div className='flex content-center justify-center h-fit w-1/2 max-w-[175px] m-4 mb-8 sm:h-[175px] sm:w-fit sm:mr-8 self-center glow-circle'>
+							<Image src={me} alt='Picture of the author' className='rounded-full ' />
+						</div>
+						<p className='self-center text-justify text-lg sm:text-2xl p-4 w-fit lg:text-justify '>
+							I'm a student majoring in Computer Science and the Vice-President of the Knight's Table
+							Tennis Club at the University of Central Florida. I started programming in highschool and
+							have stuck with it ever since. Since then I have learned and become proficient in many
+							programming languages like Python, Java, C and C++, but I prefer to program in C whenever
+							possible. I like to work on projects that are closer to the metal, but I have experience
+							doing fullstack developement with technologies like React, Nextjs and Nodejs.
+						</p>
+					</div>
+				</div>
 			</main>
 
 			<footer></footer>
