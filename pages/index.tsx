@@ -156,12 +156,12 @@ export default function Home() {
 						</p>
 					</div>
 				</div>
-				<div id='skills' className='flex flex-col justify-center content-center w-full min-h-screen p-4'>
+				<div id='skills' className='flex flex-col justify-center content-center w-full h-fit p-4'>
 					<h1 className='text-center text-4xl sm:text-5xl p-4'>Skills</h1>
 					<p className='self-center text-center text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
 						Here are some of the skills I've learned since I started programming.
 					</p>
-					<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
+					<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
 						{user.skills.map((e, ind) => {
 							return <SkillCard key={ind} skill={e.name.toString()} />;
 						})}

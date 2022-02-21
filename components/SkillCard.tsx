@@ -12,7 +12,7 @@ function SkillCard(props: SkillCardProps) {
 		];
 	return (
 		<div
-			className={`grid content-center justify-center text-8xl w-full w-max-[500px] h-max-[500px] bg-[#292929] aspect-square rounded-3xl shadow-2xl shadow-black ${styles.grow} ${styles.cardglow}`}
+			className={`grid content-center justify-center self-center justify-self-center text-7xl w-full w-max-[200px] h-max-[200px] bg-[#292929] aspect-square rounded-3xl shadow-2xl shadow-black ${styles.grow} ${styles.cardglow}`}
 		>
 			{SkillLogo ? <SkillLogo /> : props.skill}
 		</div>
