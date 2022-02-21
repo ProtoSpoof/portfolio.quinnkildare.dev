@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Typewriter from '../components/Typewriter';
 import Particles from 'react-tsparticles';
@@ -24,19 +23,6 @@ export default function Home() {
 
 	return (
 		<div className='min-h-screen w-screen bg-neutral-900'>
-			<Head>
-				<title>Quinlan Kildare</title>
-				<meta name='description' content='Porfolio Site' />
-				<link rel='icon' href='/favicon.svg' />
-				<link rel='apple-touch-icon' sizes='180x180' href='%PUBLIC_URL%/apple-touch-icon.png' />
-				<link rel='icon' type='image/png' sizes='32x32' href='%PUBLIC_URL%/favicon-32x32.png' />
-				<link rel='icon' type='image/png' sizes='16x16' href='%PUBLIC_URL%/favicon-16x16.png' />
-				<link rel='manifest' href='%PUBLIC_URL%/site.webmanifest' />
-				<link rel='mask-icon' href='%PUBLIC_URL%/safari-pinned-tab.svg' color='#5bbad5' />
-				<meta name='msapplication-TileColor' content='#333333' />
-				<meta name='theme-color' content='#333333' />
-			</Head>
-
 			<main className='grid grid-cols-1 content-center justify-center min-h-screen w-full'>
 				<Particles
 					className='absolute h-screen w-full z-10'
