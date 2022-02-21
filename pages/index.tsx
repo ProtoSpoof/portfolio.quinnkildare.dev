@@ -152,28 +152,14 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
-					{/* <a
-						className='absolute flex content-center justify-center bottom-4 left-1/2 translate-x-1/2'
-						href='#bio'
-					>
-						<svg
-							className='h-8 w-auto fill-[snow] icon'
-							xmlns='http://www.w3.org/2000/svg'
-							width='24'
-							height='24'
-							viewBox='0 0 24 24'
-						>
-							<path d='M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z' />
-						</svg>
-					</a> */}
 				</div>
-				<div id='bio' className='w-full bg-[#00000050] p-8'>
-					<h1 className='text-center text-4xl sm:text-6xl'>About</h1>
-					<div className='flex flex-col sm:flex-row content-center justify-center'>
-						<div className='flex content-center justify-center h-auto w-1/2 max-w-[250px] sm:h-1/2 sm:w-auto sm:max-h-[250px] sm:max-w-[250px] self-center pb-8 pt-8'>
+				<div id='bio' className='flex flex-col justify-center content-center w-full bg-[#00000050] p-4'>
+					<h1 className='text-center text-4xl sm:text-5xl p-4'>About</h1>
+					<div className='flex flex-col lg:flex-row self-center content-center justify-center p-4 max-w-[1000px]'>
+						<div className='flex content-center justify-center h-fit w-1/2 max-w-[175px] m-4 mb-8 sm:h-[175px] sm:w-fit sm:mr-8 self-center glow-circle'>
 							<Image src={me} alt='Picture of the author' className='rounded-full ' />
 						</div>
-						<p className='self-center text-center'>
+						<p className='self-center text-justify text-lg sm:text-2xl p-4 w-fit lg:text-justify '>
 							I'm a student majoring in Computer Science and the Vice-President of the Knight's Table
 							Tennis Club at the University of Central Florida. I started programming in highschool and
 							have stuck with it ever since. Since then I have learned and become proficient in many

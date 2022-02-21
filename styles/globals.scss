@@ -57,6 +57,11 @@ $c: cyan yellow tomato;
 	animation: iconglow $d ease-in-out both infinite;
 }
 
+.glow-circle {
+	border-radius: 50%;
+	animation: iconglow $d ease-in-out both infinite;
+}
+
 @mixin glow($c1, $c2, $c3) {
 	text-shadow: 0 0 $r/6 snow, 0 (-$o) $r $c3, (-$o) $o $r $c2, $o $o $r $c3;
 }
