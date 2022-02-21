@@ -12,15 +12,24 @@ function SkillCard(props: SkillCardProps) {
 		];
 	return (
 		<div
-			className={`grid content-center justify-center self-center justify-self-center text-7xl w-full w-max-[200px] h-max-[200px] bg-[#292929] aspect-square rounded-3xl shadow-2xl shadow-black ${styles.grow} ${styles.cardglow}`}
+			className={`w-full w-max-[200px] h-max-[200px] aspect-square rea cursor-pointer ${styles.card} ${styles.grow}`}
 		>
-			{SkillLogo ? <SkillLogo /> : props.skill}
+			<div className={`w-full h-full bg-[#292929] rounded-3xl shadow-2xl shadow-black ${styles.cardinner}`}>
+				<div className={`grid content-center justify-center h-full text-7xl ${styles.frontface}`}>
+					{SkillLogo ? <SkillLogo className={`${styles.logo}`} /> : props.skill}
+				</div>
+				<div className={`grid content-center justify-center text-center w-full h-full ${styles.backface}`}>
+					<h2 className='text-3xl'>{props.skill}</h2>
+					<h3 className=''>{props.level}</h3>
+				</div>
+			</div>
 		</div>
 	);
 }
 
 type SkillCardProps = {
 	skill: String;
+	level: String;
 };
 
 export default SkillCard;

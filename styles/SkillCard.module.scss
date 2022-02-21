@@ -6,19 +6,40 @@ $bg: #111; // background color
 
 $c: cyan yellow tomato;
 
-.cardglow {
-	transition: cardglow 0.005s ease-in-out;
+.cardinner {
+	transition: transform 1s, cardglow 0.005s ease-in-out;
+	transform-style: preserve-3d;
 }
-.cardglow:hover {
+
+.card:hover .cardinner {
 	animation: cardglow $d ease-in-out both infinite;
+	transform: rotateY(-180deg);
+}
+
+.logo {
+	transition: transform 1s;
+	backface-visibility: hidden;
 }
 
 .grow {
-	transition: all 0.05s ease-in-out;
+	transition: transform 1s;
 }
 
 .grow:hover {
 	transform: scale(1.1);
+}
+
+.frontface {
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+.backface {
+	position: absolute;
+	top: 0;
+	left: 0;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
 }
 
 @mixin cardglow($c1, $c2, $c3) {
