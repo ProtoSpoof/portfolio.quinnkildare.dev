@@ -9,10 +9,5 @@ module.exports = withPWA({
         register: true,
         skipWaiting: true,
         runtimeCaching,
-<<<<<<< HEAD
-=======
-        buildExcludes: [/middleware-manifest.json$/],
-        sw: '/sw.js'
->>>>>>> 549499cb4a59580598ba2f8e2af2cba7b15e578d
     }
 });
