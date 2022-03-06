@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Typewriter from '../components/Typewriter';
 import SkillCard from '../components/SkillCard';
+import ProjectCard from '../components/ProjectCard';
 import Particles from 'react-tsparticles';
 import { useState, useEffect } from 'react';
 import me from '../public/images/me.gif';
@@ -19,8 +20,6 @@ export default function Home() {
 	if (!user) {
 		return <div />;
 	}
-
-	console.log(user);
 
 	return (
 		<div className='min-h-screen w-screen bg-[#121212]'>
@@ -164,6 +163,28 @@ export default function Home() {
 					<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
 						{user.skills.map((e, ind) => {
 							return <SkillCard key={ind} skill={e.name.toString()} level={e.level.toString()} />;
+						})}
+					</div>
+				</div>
+				<div
+					id='projects'
+					className='flex flex-col justify-center content-center w-full h-fit bg-[#00000050] p-4'
+				>
+					<h1 className='text-center text-4xl sm:text-5xl p-4'>Projects</h1>
+					<p className='self-center text-center text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
+						These are a few of the projects that I'm most proud of.
+					</p>
+					<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-16 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
+						{user.projects.map((e, ind) => {
+							return (
+								<ProjectCard
+									key={ind}
+									name={e.name}
+									summary={e.summary}
+									url={e.repositoryUrl}
+									languages={e.languages}
+								/>
+							);
 						})}
 					</div>
 				</div>

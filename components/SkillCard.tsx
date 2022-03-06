@@ -12,7 +12,7 @@ function SkillCard(props: SkillCardProps) {
 		];
 	return (
 		<div
-			className={`w-full w-max-[200px] h-max-[200px] aspect-square rea cursor-pointer ${styles.card} ${styles.grow}`}
+			className={`w-full w-max-[200px] h-max-[200px] aspect-square cursor-pointer ${styles.card} ${styles.grow}`}
 		>
 			<div className={`w-full h-full bg-[#292929] rounded-3xl shadow-2xl shadow-black ${styles.cardinner}`}>
 				<div className={`grid content-center justify-center h-full text-7xl ${styles.frontface}`}>
