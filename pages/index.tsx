@@ -20,9 +20,10 @@ export default function Home() {
 	if (!user) {
 		return <div />;
 	}
+	console.log(user.projects);
 
 	return (
-		<div className='min-h-screen w-screen bg-[#121212]'>
+		<div className='min-h-screen w-screen bg-[#121212] text-[snow]'>
 			<main className='grid grid-cols-1 content-center justify-center min-h-screen w-full'>
 				<Particles
 					className='absolute h-screen w-full z-10'
@@ -105,14 +106,17 @@ export default function Home() {
 						detectRetina: true,
 					}}
 				></Particles>
-				<div className='grid grid-cols-1 gap-2 sm:gap-5 md:gap-8 content-center justify-center splash w-full h-screen bg-transparent relative top-0 left-0 z-10'>
-					<h1 className='glow splash-title justify-self-center text-4xl sm:text-6xl md:text-8xl'>
+				<div
+					id='splash'
+					className='grid grid-cols-1 gap-2 sm:gap-5 md:gap-8 content-center justify-center splash w-full h-screen bg-transparent relative top-0 left-0 z-10'
+				>
+					<h1 className='glow splash-title justify-self-center text-5xl sm:text-6xl md:text-8xl'>
 						Quinlan Kildare
 					</h1>
 					<h2 className='glow splash-subtitle justify-self-center text-xl sm:text-3xl md:text-6xl'>
 						<Typewriter words={['Computer Scientist', 'Programmer', 'Engineer']} loop={true} />
 					</h2>
-					<div className='grid grid-cols-1 sm:grid-cols-3 content-center justify-center m-12'>
+					<div className='grid grid-cols-1 sm:grid-cols-3 content-center justify-center m-8'>
 						<div className='flex sm:col-start-2 content-center justify-evenly sm:justify-between md:justify-between lg:justify-around h-fit w-full'>
 							<a className='h-fit' href='https://www.linkedin.com/in/quinlan-kildare-a030781ba/'>
 								<svg
@@ -138,56 +142,91 @@ export default function Home() {
 							</a>
 						</div>
 					</div>
+					<a className='absolute animate-bounce justify-self-center bottom-8' href='#about'>
+						<svg
+							className='h-10 sm:h-14 md:h-16 w-auto rotate-90 fill-[snow]'
+							xmlns='http://www.w3.org/2000/svg'
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+						>
+							<path d='M6.028 0v6.425l5.549 5.575-5.549 5.575v6.425l11.944-12z' />
+						</svg>
+					</a>
 				</div>
-				<div id='bio' className='flex flex-col justify-center content-center w-full bg-[#00000050] p-4'>
-					<h1 className='text-center text-4xl sm:text-5xl p-4'>About</h1>
-					<div className='flex flex-col lg:flex-row self-center content-center justify-center p-4 max-w-[1500px]'>
-						<div className='flex content-center justify-center h-fit w-1/2 max-w-[175px] m-4 mb-8 sm:h-[175px] sm:w-fit sm:mr-8 self-center glow-circle'>
+
+				<div
+					id='about'
+					className='w-full h-fit flex content-center justify-center overflow-hidden bg-[#00000050]'
+				>
+					<div className='container grid grid-cols-1 gap-8 justify-center content-center m-8'>
+						<h1 className='glow text-center text-3xl'>About</h1>
+						<div className='flex content-center justify-center self-center justify-self-center h-[150px] aspect-square glow-circle'>
 							<Image src={me} alt='Picture of the author' className='rounded-full ' />
 						</div>
-						<p className='self-center text-justify text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
+						<p className='text-justify [text-align-last:center] text-base h-full'>
 							I'm a student majoring in Computer Science and the Vice-President of the Knight's Table
 							Tennis Club at the University of Central Florida. I started programming in high school and
 							have stuck with it ever since. Since then I have learned and become proficient in many
 							programming languages like Python, Java, C and C++, but I prefer to program in C whenever
 							possible. I like to work on projects that are closer to the metal, but I have experience
-							doing fullstack developement with technologies like React, Nextjs and Nodejs.
+							doing fullstack developement with technologies like React, Nextjs, and Nodejs.
 						</p>
 					</div>
 				</div>
-				<div id='skills' className='flex flex-col justify-center content-center w-full h-fit p-4'>
-					<h1 className='text-center text-4xl sm:text-5xl p-4'>Skills</h1>
-					<p className='self-center text-center text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
-						Here are some of the skills I've learned since I started programming.
-					</p>
-					<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-16 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
-						{user.skills.map((e, ind) => {
-							return <SkillCard key={ind} skill={e.name.toString()} level={e.level.toString()} />;
-						})}
+
+				<div id='skills' className='w-full h-fit flex content-center justify-center overflow-hidden'>
+					<div className='container grid grid-cols-1 gap-8 justify-center content-center m-8'>
+						<h1 className='glow text-center text-3xl'>Skills</h1>
+						<h2 className='text-justify [text-align-last:center] text-base'>
+							I've learned a lot since I started programming. Here are just a few of the skills that I've
+							picked up along the way.
+						</h2>
+						<div className='flex flex-wrap gap-8 justify-between content-between'>
+							{user.skills.map((e, ind) => {
+								return <SkillCard key={ind} skill={e.name.toString()} level={e.level.toString()} />;
+							})}
+						</div>
 					</div>
 				</div>
+
 				<div
 					id='projects'
-					className='flex flex-col justify-center content-center w-full h-fit bg-[#00000050] p-4'
+					className='w-full h-fit flex content-center justify-center overflow-hidden bg-[#00000050]'
 				>
-					<h1 className='text-center text-4xl sm:text-5xl p-4'>Projects</h1>
-					<p className='self-center text-center text-lg sm:text-2xl sm:pt-0 p-4 w-fit '>
-						These are a few of the projects that I'm most proud of.
-					</p>
-					<div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-16 self-center content-center justify-center p-8 w-full max-w-[1500px]'>
-						{user.projects.map((e, ind) => {
-							return (
-								<ProjectCard
-									key={ind}
-									name={e.name}
-									summary={e.summary}
-									url={e.repositoryUrl}
-									languages={e.languages}
-								/>
-							);
-						})}
+					<div className='container grid grid-cols-1 gap-8 justify-center content-center m-8'>
+						<h1 className='glow text-center text-3xl'>Projects</h1>
+						<h2 className='text-justify [text-align-last:center] text-base'>
+							These are some of the projects I'm most proud of.
+						</h2>
+						<div className='flex flex-wrap gap-8 justify-center content-between'>
+							{user.projects.map((e, ind) => {
+								return (
+									<ProjectCard
+										key={ind}
+										name={e.name}
+										summary={e.summary}
+										url={e.repositoryUrl}
+										languages={e.languages}
+									/>
+								);
+							})}
+						</div>
 					</div>
 				</div>
+				{/*
+							{user.projects.map((e, ind) => {
+								return (
+									<ProjectCard
+										key={ind}
+										name={e.name}
+										summary={e.summary}
+										url={e.repositoryUrl}
+										languages={e.languages}
+									/>
+								);
+							})} 
+                */}
 			</main>
 
 			<footer></footer>

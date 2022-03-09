@@ -3,29 +3,32 @@ import styles from '../styles/ProjectCard.module.scss';
 
 function ProjectCard(props: ProjectCardProps) {
 	return (
-		<div className={`${styles.card} self-center justify-self-center`}>
-			<div className={`${styles.face} ${styles.face1}`}>
-				<div className={`${styles.content}`}>
-					<h3>{props.name}</h3>
-				</div>
-			</div>
-			<div className={`${styles.face} ${styles.face2}`}>
-				<div className={`${styles.content}`}>
-					<p> {props.summary}</p>
-					<br />
-					<h4>
-						<em>Languages: </em>
-						{props.languages.map((e, ind) => {
-							return <em key={ind}>{e.toString() + (ind < props.languages.length - 1 ? ', ' : '')}</em>;
-						})}
-					</h4>
+		<button
+			className={`flex flex-col gap-4 w-full lg:w-[calc(50%-1rem)] 2xl:w-[calc(33.333%-1.34rem)] bg-[#FFFFFF10] shadow-black shadow-2xl rounded-md p-4 ${styles.card} ${styles.grow}`}
+			onClick={() => {
+				window.open(props.url.toString());
+			}}
+		>
+			<p className='text-xl text-left text-[snow] border-b border-gray-200 pb-4'>{props.name}</p>
 
-					<a href={props.url.toString()} type='button'>
-						View
-					</a>
-				</div>
+			<p className='text-sm text-left text-gray-300 flex-grow'>
+				{props.summary ? props.summary : 'Just checkout the github'}
+			</p>
+
+			<div className='flex flex-wrap gap-1'>
+				{props.languages.map((e, ind) => {
+					return (
+						<div key={ind} className={`bg-[#00000070] rounded-full`}>
+							<div
+								className={`py-2 px-4 text-xs text-transparent bg-clip-text font-medium ${styles.background}`}
+							>
+								{e.toString()}
+							</div>
+						</div>
+					);
+				})}
 			</div>
-		</div>
+		</button>
 	);
 }
 

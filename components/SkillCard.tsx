@@ -12,15 +12,19 @@ function SkillCard(props: SkillCardProps) {
 		];
 	return (
 		<div
-			className={`w-full w-max-[200px] h-max-[200px] aspect-square cursor-pointer ${styles.card} ${styles.grow}`}
+			className={`w-[calc(50%-1rem)] md:w-[calc(25%-1.5rem)] aspect-square rounded-md ${styles.card} ${styles.grow}`}
 		>
-			<div className={`w-full h-full bg-[#292929] rounded-3xl shadow-2xl shadow-black ${styles.cardinner}`}>
+			<div
+				className={`w-full aspect-square bg-[#FFFFFF10] rounded-md shadow-2xl shadow-black ${styles.cardinner}`}
+			>
 				<div className={`grid content-center justify-center h-full text-7xl ${styles.frontface}`}>
 					{SkillLogo ? <SkillLogo className={`${styles.logo}`} /> : props.skill}
 				</div>
-				<div className={`grid content-center justify-center text-center w-full h-full ${styles.backface}`}>
-					<h2 className='sm:text-xl lg:text-3xl'>{props.skill}</h2>
-					<h3 className='md:text-2xl'>{props.level}</h3>
+				<div
+					className={`grid content-center justify-center text-center w-full aspect-square ${styles.backface}`}
+				>
+					<h2 className='text-[125%]'>{props.skill}</h2>
+					<h3 className='text-[100%]'>{props.level}</h3>
 				</div>
 			</div>
 		</div>
