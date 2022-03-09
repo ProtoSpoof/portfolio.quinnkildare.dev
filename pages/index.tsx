@@ -168,6 +168,7 @@ export default function Home() {
 			</section>
 
 			<section
+				id='about'
 				className='w-full h-fit flex content-center justify-center overflow-hidden bg-[#00000050]'
 				title='about area'
 			>
