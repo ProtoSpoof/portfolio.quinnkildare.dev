@@ -9,7 +9,9 @@ function ProjectCard(props: ProjectCardProps) {
 				window.open(props.url.toString());
 			}}
 		>
-			<p className='text-xl text-left break-words text-[snow] border-b border-gray-200 pb-4'>{props.name}</p>
+			<p className='w-full text-xl text-left break-words text-[snow] border-b border-gray-200 pb-4'>
+				{props.name}
+			</p>
 
 			<p className='text-sm text-left text-gray-300 flex-grow'>
 				{props.summary ? props.summary : 'Just checkout the github'}
