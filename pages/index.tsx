@@ -23,91 +23,91 @@ export default function Home() {
 
 	return (
 		<main className='grid grid-cols-1 content-center justify-center min-h-screen w-screen bg-[#121212] text-[snow]'>
+			<Particles
+				className='absolute h-screen w-full z-10'
+				options={{
+					fullScreen: { enable: false },
+					background: {
+						color: {
+							value: '#0000000',
+						},
+					},
+					fpsLimit: 120,
+					interactivity: {
+						events: {
+							onClick: {
+								enable: false,
+								mode: 'push',
+							},
+							onHover: {
+								enable: false,
+								mode: 'repulse',
+							},
+							resize: true,
+						},
+						modes: {
+							bubble: {
+								distance: 400,
+								duration: 2,
+								opacity: 0.8,
+								size: 40,
+							},
+							push: {
+								quantity: 4,
+							},
+							repulse: {
+								distance: 200,
+								duration: 0.4,
+							},
+						},
+					},
+					particles: {
+						color: {
+							value: '#ffffff',
+						},
+						links: {
+							color: '#ffffff',
+							distance: 150,
+							enable: true,
+							opacity: 0.5,
+							width: 1,
+						},
+						collisions: {
+							enable: true,
+						},
+						move: {
+							direction: 'none',
+							enable: true,
+							outMode: 'bounce',
+							random: false,
+							speed: 0.5,
+							straight: false,
+						},
+						number: {
+							density: {
+								enable: true,
+								area: 800,
+							},
+							value: 60,
+						},
+						opacity: {
+							value: 0.5,
+						},
+						shape: {
+							type: 'circle',
+						},
+						size: {
+							random: true,
+							value: 5,
+						},
+					},
+					detectRetina: true,
+				}}
+			></Particles>
 			<section
 				className='grid grid-cols-1 gap-2 sm:gap-5 md:gap-8 content-center justify-center splash w-full h-screen bg-transparent relative top-0 left-0 z-10'
 				title='splash area'
 			>
-				<Particles
-					className='absolute h-screen w-full z-10'
-					options={{
-						fullScreen: { enable: false },
-						background: {
-							color: {
-								value: '#0000000',
-							},
-						},
-						fpsLimit: 120,
-						interactivity: {
-							events: {
-								onClick: {
-									enable: false,
-									mode: 'push',
-								},
-								onHover: {
-									enable: false,
-									mode: 'repulse',
-								},
-								resize: true,
-							},
-							modes: {
-								bubble: {
-									distance: 400,
-									duration: 2,
-									opacity: 0.8,
-									size: 40,
-								},
-								push: {
-									quantity: 4,
-								},
-								repulse: {
-									distance: 200,
-									duration: 0.4,
-								},
-							},
-						},
-						particles: {
-							color: {
-								value: '#ffffff',
-							},
-							links: {
-								color: '#ffffff',
-								distance: 150,
-								enable: true,
-								opacity: 0.5,
-								width: 1,
-							},
-							collisions: {
-								enable: true,
-							},
-							move: {
-								direction: 'none',
-								enable: true,
-								outMode: 'bounce',
-								random: false,
-								speed: 0.5,
-								straight: false,
-							},
-							number: {
-								density: {
-									enable: true,
-									area: 800,
-								},
-								value: 60,
-							},
-							opacity: {
-								value: 0.5,
-							},
-							shape: {
-								type: 'circle',
-							},
-							size: {
-								random: true,
-								value: 5,
-							},
-						},
-						detectRetina: true,
-					}}
-				></Particles>
 				<h1 className='glow splash-title justify-self-center text-5xl sm:text-6xl md:text-8xl'>
 					Quinlan Kildare
 				</h1>
