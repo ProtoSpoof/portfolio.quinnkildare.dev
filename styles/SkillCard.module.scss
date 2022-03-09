@@ -22,11 +22,11 @@ $c: cyan yellow tomato;
 }
 
 .grow {
-	transition: transform 1s;
+	transition: transform 0.5s;
 }
 
 .grow:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 }
 
 .frontface {
