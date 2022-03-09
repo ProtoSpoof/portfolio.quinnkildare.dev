@@ -90,10 +90,10 @@ const Typewriter = (props: TypewriterProps) => {
 	}, [props.loop, props.words]);
 
 	return (
-		<div className='pl-[1ch]'>
+		<p className='pl-[1ch]' title='typewriter'>
 			{text}
 			<span className={`${blink ? styles.blink : ''}`}>_</span>
-		</div>
+		</p>
 	);
 };
 

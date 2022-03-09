@@ -14,11 +14,13 @@ $c: cyan yellow tomato;
 	transition: transform 0.5s;
 }
 
-.grow:hover {
+.grow:hover,
+.grow:focus {
 	transform: scale(1.05);
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
 	animation: cardglow $d ease-in-out both infinite;
 }
 

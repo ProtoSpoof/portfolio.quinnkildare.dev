@@ -11,7 +11,13 @@ $c: cyan yellow tomato;
 	transform-style: preserve-3d;
 }
 
-.card:hover .cardinner {
+// .card:hover .cardinner {
+// 	animation: cardglow $d ease-in-out both infinite;
+// 	transform: rotateY(-180deg);
+// }
+
+.card:hover .cardinner,
+.card:focus .cardinner {
 	animation: cardglow $d ease-in-out both infinite;
 	transform: rotateY(-180deg);
 }
@@ -25,6 +31,7 @@ $c: cyan yellow tomato;
 	transition: transform 0.5s;
 }
 
+.grow:focus,
 .grow:hover {
 	transform: scale(1.05);
 }
