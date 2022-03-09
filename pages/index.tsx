@@ -20,7 +20,6 @@ export default function Home() {
 	if (!user) {
 		return <div />;
 	}
-	console.log(user.projects);
 
 	return (
 		<div className='min-h-screen w-screen bg-[#121212] text-[snow]'>
@@ -214,19 +213,6 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				{/*
-							{user.projects.map((e, ind) => {
-								return (
-									<ProjectCard
-										key={ind}
-										name={e.name}
-										summary={e.summary}
-										url={e.repositoryUrl}
-										languages={e.languages}
-									/>
-								);
-							})} 
-                */}
 			</main>
 
 			<footer></footer>
